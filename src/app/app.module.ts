@@ -11,9 +11,12 @@ import { ButtonComponent } from './componets/button/button.component';
 import { TasksComponent } from './componets/tasks/tasks.component';
 import { TasksItemComponent } from './componets/tasks-item/tasks-item.component';
 import { AddTaskComponent } from './componets/add-task/add-task.component';
+import { AboutComponent } from './componets/about/about.component';
+import { FooterComponent } from './componets/footer/footer.component';
 
 const appRoutes: Routes = [
-  {path: '', component: TasksComponent}
+  {path: '', component: TasksComponent},
+{path: 'about', component: AboutComponent}
 ]
 @NgModule({
   declarations: [
@@ -22,13 +25,16 @@ const appRoutes: Routes = [
     ButtonComponent,
     TasksComponent,
     TasksItemComponent,
-    AddTaskComponent
+    AddTaskComponent,
+    AboutComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     FontAwesomeModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes, {enableTracing: true})
   ],
   providers: [],
   bootstrap: [AppComponent]
